@@ -115,7 +115,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    const listId = location.pathname.split('list/')[1];
+    const listId = location.pathname.split('lists/')[1];
     if (lists) {
       const list = lists.find((list) => list.id === +listId);
       setActiveItem(list);
@@ -158,7 +158,7 @@ function App() {
                 setLists(newLists);
               }}
               onClickItem={(list) => {
-                navigate(`/list/${list.id}`);
+                navigate(`/lists/${list.id}`);
               }}
               activeItem={activeItem}
               isRemovable
@@ -188,7 +188,7 @@ function App() {
                 ))
               }></Route>
             <Route
-              path="/list/:id"
+              path="/lists/:id"
               element={
                 lists &&
                 activeItem && (
