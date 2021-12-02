@@ -1,0 +1,122 @@
+@media (max-width: 850px) {
+  .tasks__title {
+    font-size: 25px;
+  }
+  .tasks__items-row {
+    p {
+      font-size: 13px;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .todo {
+    height: calc(100vh - 150px);
+
+    &__tasks {
+      padding-right: 30px !important;
+    }
+  }
+
+  .add-list__popup {
+    opacity: 0.95;
+  }
+
+  .tasks__title {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  .todo__sidebar {
+    height: 100%;
+    position: absolute;
+    padding: 65px 20px 5px 0;
+    width: 35px;
+    box-sizing: border-box;
+
+    .list i {
+      left: 1px;
+      margin-right: 10px;
+    }
+
+    .list__add-folder {
+      position: relative;
+      left: 3px !important;
+    }
+
+    .list {
+      margin-bottom: 15px;
+
+      &__add-button {
+        position: relative;
+        left: -2px;
+      }
+
+      li {
+        width: 10px;
+        i {
+          svg {
+            position: relative;
+            left: -3px;
+          }
+        }
+        span {
+          display: none;
+        }
+        .list__remove-icon {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .todo {
+    width: calc(100vw - 20px);
+    height: 90%;
+
+    &__sidebar {
+      padding-top: 25px;
+    }
+
+    &__tasks {
+      padding-top: 20px;
+    }
+  }
+  .tasks__title {
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .tasks__items-row-actions {
+    div {
+      svg {
+        width: 12px !important;
+        height: 12px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .todo {
+    width: calc(100vw - 5px);
+    height: 95%;
+
+    &__sidebar {
+      padding-top: 5px;
+    }
+
+    &__tasks {
+      padding-top: 15px;
+      padding-right: 0 !important;
+    }
+  }
+  .tasks__title{
+    line-height: 20px;
+  }
+}

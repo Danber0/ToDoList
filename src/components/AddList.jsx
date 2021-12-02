@@ -61,6 +61,7 @@ function AddList({ colors, onAdd }) {
             className: 'list__add-button',
             icon: (
               <svg
+              className="list__add-folder"
                 width="10"
                 height="10"
                 viewBox="0 0 16 16"

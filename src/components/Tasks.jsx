@@ -37,14 +37,15 @@ function Tasks({
 
   return (
     <div className="tasks">
-      <Link to={`/lists/${list.id}`}>
-        <h2 style={{ color: list.color.hex }} className="tasks__title">
-          {list.name}
+      <div>
+        <h2 className="tasks__title">
+          <Link to={`/lists/${list.id}`}>
+            <span style={{ color: list.color.hex }}>{list.name}</span>
+          </Link>
           <img onClick={editTitle} src={editSvg} alt="Edit" />
         </h2>
-      </Link>
+      </div>
       <div className="tasks__items">
-        {!withoutEmpty && list.tasks && !list.tasks.length && <h2>Задачи отсутствуют!</h2>}
         {list.tasks &&
           list.tasks.map((task) => (
             <Task
@@ -57,6 +58,7 @@ function Tasks({
             />
           ))}
         <AddTaskForm key={list.id} list={list} AddTask={AddTask} />
+        {!withoutEmpty && list.tasks && !list.tasks.length && <h2>Задачи отсутствуют!</h2>}
       </div>
     </div>
   );
