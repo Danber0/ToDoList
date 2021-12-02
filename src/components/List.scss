@@ -1,0 +1,63 @@
+.list {
+  margin-bottom: 30px;
+
+  &__add-button {
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    cursor: pointer;
+
+    &:hover .list__remove-icon {
+      opacity: 0.2;
+    }
+
+    .list__remove-icon {
+      opacity: 0;
+      padding-left: 10px;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    span {
+      flex: 1 0 90%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      // width: 180px;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    &.active {
+      background: #fff;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+    }
+
+    .badge {
+      position: relative;
+      left: 5px;
+    }
+  }
+  i {
+    display: inline-flex;
+    margin-right: 8px;
+    svg {
+      path {
+        fill: #7c7c7c;
+      }
+    }
+  }
+}
