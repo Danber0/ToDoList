@@ -7,12 +7,21 @@
       font-size: 13px;
       margin-left: 10px;
     }
+    &-actions {
+      opacity: 0.5;
+      div {
+        margin-left: 0;
+      }
+      div:hover {
+        background-color: inherit;
+      }
+    }
   }
 }
 
 @media (max-width: 750px) {
   .todo {
-    height: calc(100vh - 150px);
+    height: calc(100vh - 50px);
 
     &__tasks {
       padding-right: 30px !important;
@@ -21,6 +30,18 @@
 
   .add-list__popup {
     opacity: 0.95;
+  }
+
+  .checkbox {
+    &:hover {
+      label {
+        background-color: none;
+        border-color: none;
+        svg {
+          opacity: 0;
+        }
+      }
+    }
   }
 
   .tasks__title {
@@ -37,7 +58,6 @@
 
     .list i {
       left: 1px;
-      margin-right: 10px;
     }
 
     .list__add-folder {
@@ -55,6 +75,10 @@
 
       li {
         width: 10px;
+
+        &:hover .list__remove-icon {
+          opacity: 0.3;
+        }
         i {
           svg {
             position: relative;
@@ -74,15 +98,25 @@
 
 @media (max-width: 500px) {
   .todo {
-    width: calc(100vw - 20px);
-    height: 90%;
-
+    width: 96%;
+    height: 96%;
     &__sidebar {
       padding-top: 25px;
     }
 
     &__tasks {
       padding-top: 20px;
+    }
+    .tasks {
+      &__form {
+        &-block {
+          button {
+            margin-top: 10px;
+            margin-right: 5px;
+            padding: 7px 15px;
+          }
+        }
+      }
     }
   }
   .tasks__title {
@@ -104,19 +138,13 @@
 
 @media (max-width: 380px) {
   .todo {
-    width: calc(100vw - 5px);
-    height: 95%;
-
-    &__sidebar {
-      padding-top: 5px;
-    }
-
     &__tasks {
-      padding-top: 15px;
+      padding-top: 30px;
       padding-right: 0 !important;
     }
   }
-  .tasks__title{
+  .tasks__title {
     line-height: 20px;
+    padding-bottom: 20px;
   }
 }

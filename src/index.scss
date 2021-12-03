@@ -84,9 +84,23 @@ code {
   padding: 8px 12px;
   width: 100%;
   font-size: 14px;
+  transition: border 0.5s ease-in-out;
 
   &:focus {
     outline: none;
     border-color: #5c5c5c;
+  }
+
+  &.wrong {
+    border: 1px solid crimson;
+    transition: border 0.5s ease-in-out;
+    &::placeholder {
+      color: crimson;
+    }
+  }
+
+  &.succes {
+    border: 1px solid #7af83f;
+    transition: border 0.5s ease-in-out;
   }
 }

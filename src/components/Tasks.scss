@@ -39,6 +39,7 @@
   &__form {
     margin-top: 20px;
     cursor: pointer;
+    user-select: none;
 
     &-block {
       .button {
@@ -155,10 +156,10 @@
 
     &:hover {
       label {
-        background-color: #f2f2f2;
-        border-color: #f2f2f2;
+        // background-color: #f2f2f2;
+        // border-color: #f2f2f2;
         svg {
-          opacity: 1;
+          // opacity: 1;
           path {
             stroke: #b2b2b2;
           }

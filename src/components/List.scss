@@ -16,11 +16,12 @@
     cursor: pointer;
 
     &:hover .list__remove-icon {
+      display: block;
       opacity: 0.2;
     }
 
     .list__remove-icon {
-      opacity: 0;
+      display: none;
       padding-left: 10px;
 
       &:hover {

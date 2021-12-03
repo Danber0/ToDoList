@@ -7,14 +7,26 @@ function AddTaskForm({ list, AddTask }) {
   const [FormVisible, setFormVisible] = React.useState(false);
   const [inputValue, setInputValue] = React.useState('');
   const [isLoading, setIsLoading] = React.useState();
+  const input = React.useRef();
 
   const toggleFormVisible = () => {
     setFormVisible(!FormVisible);
-    setInputValue('');
   };
 
   const addTask = () => {
     const obj = { listId: list.id, text: inputValue, completed: false };
+
+    if (!inputValue.trim()) {
+      input.current.classList.add('wrong');
+      setInputValue('');
+      setTimeout(() => {
+        input.current.classList.remove('wrong');
+      }, 1200);
+      return;
+    } else {
+      input.current.classList.add('succes');
+    }
+
     setIsLoading(true);
     axios
       .post('https://danber-todo.herokuapp.com/tasks', obj)
@@ -23,7 +35,12 @@ function AddTaskForm({ list, AddTask }) {
         toggleFormVisible();
       })
       .catch(() => {
-        alert('Не удалось добавить задачу');
+        input.current.classList.remove('succes');
+        alert('Не удалось добавить задачу!');
+        input.current.classList.add('wrong');
+        setTimeout(() => {
+          input.current.classList.remove('wrong');
+        }, 1200);
       })
       .finally(() => {
         setIsLoading(false);
@@ -35,6 +52,7 @@ function AddTaskForm({ list, AddTask }) {
       {FormVisible ? (
         <div className="tasks__form-block">
           <input
+            ref={input}
             onChange={(event) => setInputValue(event.target.value)}
             value={inputValue}
             className="field"
