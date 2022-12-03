@@ -26,7 +26,7 @@ function Tasks({
     if (newTitle.trim()) {
       onEditTitle(list.id, newTitle);
       axios
-        .patch('https://danber-todo.herokuapp.com/lists/' + list.id, {
+        .patch('https://todolist-production-323c.up.railway.app/lists/' + list.id, {
           name: newTitle,
         })
         .catch(() => {

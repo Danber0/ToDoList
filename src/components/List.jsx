@@ -12,7 +12,7 @@ import Badge from './Badge';
 function List({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }) {
   const removeList = (item) => {
     if (window.confirm('Ты точно хочешь это ?')) {
-      axios.delete('https://danber-todo.herokuapp.com/lists/' + item.id).then(() => {
+      axios.delete('https://todolist-production-323c.up.railway.app/lists/' + item.id).then(() => {
         onRemove(item.id);
       });
     }

@@ -34,7 +34,7 @@ function AddList({ colors, onAdd }) {
     }
     setIsLoading(true);
     axios
-      .post('https://danber-todo.herokuapp.com/lists', { name: inputValue, colorId: selectedColor })
+      .post('https://todolist-production-323c.up.railway.app/lists', { name: inputValue, colorId: selectedColor })
       .then(({ data }) => {
         const color = colors.filter((c) => c.id === selectedColor)[0];
         const listObj = { ...data, color, tasks: [] };

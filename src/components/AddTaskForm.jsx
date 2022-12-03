@@ -29,7 +29,7 @@ function AddTaskForm({ list, AddTask }) {
 
     setIsLoading(true);
     axios
-      .post('https://danber-todo.herokuapp.com/tasks', obj)
+      .post('https://todolist-production-323c.up.railway.app/tasks', obj)
       .then(({ data }) => {
         AddTask(list.id, data);
         toggleFormVisible();

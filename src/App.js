@@ -16,11 +16,11 @@ function App() {
 
   React.useEffect(() => {
     axios
-      .get('https://danber-todo.herokuapp.com/lists?_expand=color&_embed=tasks')
+      .get('https://todolist-production-323c.up.railway.app/lists?_expand=color&_embed=tasks')
       .then(({ data }) => {
         setLists(data);
       });
-    axios.get('https://danber-todo.herokuapp.com/colors').then(({ data }) => {
+    axios.get('https://todolist-production-323c.up.railway.app/colors').then(({ data }) => {
       setColors(data);
     });
   }, []);
@@ -60,7 +60,7 @@ function App() {
     });
     setLists(newList);
     axios
-      .patch('https://danber-todo.herokuapp.com/tasks/' + taskObj.id, {
+      .patch('https://todolist-production-323c.up.railway.app/tasks/' + taskObj.id, {
         text: newTaskText,
       })
       .catch(() => {
@@ -77,7 +77,7 @@ function App() {
         return item;
       });
       setLists(newList);
-      axios.delete('https://danber-todo.herokuapp.com/tasks/' + taskId).catch(() => {
+      axios.delete('https://todolist-production-323c.up.railway.app/tasks/' + taskId).catch(() => {
         alert('Не удалось удалить задачу');
       });
     }
@@ -97,7 +97,7 @@ function App() {
     });
     setLists(newList);
     axios
-      .patch('https://danber-todo.herokuapp.com/tasks/' + taskId, {
+      .patch('https://todolist-production-323c.up.railway.app/tasks/' + taskId, {
         completed,
       })
       .catch(() => {
